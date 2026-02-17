@@ -8,11 +8,16 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.simpleapp"
+        applicationId "com.example.app"
+
+        versionCode System.getenv("VERSION_CODE") != null ?
+                System.getenv("VERSION_CODE").toInteger() : 1
+
+        versionName System.getenv("VERSION_NAME") != null ?
+                System.getenv("VERSION_NAME") : "1.0"
+
         minSdk 24
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
     }
 
     compileOptions {
